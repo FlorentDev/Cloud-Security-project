@@ -2,7 +2,11 @@ FROM node
 
 WORKDIR /usr/src/app
 
-ADD node°mofules node_modules
+ADD package.json package.json
 ADD app.js app.js
 
-ENTRYPOINT ["noed", "app"]
+ENTRYPOINT ["node", "app"]
+
+RUN npm install
+
+EXPOSE 8080
